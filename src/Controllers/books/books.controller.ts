@@ -12,8 +12,8 @@ export class BooksController {
   }
 
   @Post()
-  saveBook(@Body() newBook: BooksDto): BooksDto {
-    return this.bookService.saveBook(newBook);
+  async saveBook(@Body() newBook: BooksDto): Promise<BooksDto> {
+    return await this.bookService.saveBook(newBook);
   }
 
   @Patch()

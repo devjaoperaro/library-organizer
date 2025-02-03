@@ -20,7 +20,7 @@ export class BooksDto {
   @MaxLength(100)
   readonly name: string;
 
-  @ApiProperty()
+  @ApiProperty({ type: [AuthorDto] })
   @IsNotEmpty()
   @ArrayMinSize(1)
   @Type(() => AuthorDto)
